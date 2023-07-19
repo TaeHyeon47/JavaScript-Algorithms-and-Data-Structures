@@ -48,3 +48,13 @@ function double(arr) {
   }
   return newArr;
 }
+
+/////////////////////////////////////////////////////
+// 4. 객체의 빅오
+let instructor = {
+  firstName: 'Kelly',
+  isInstructor: true,
+  favoriteNumbers: [1, 2, 3, 4],
+};
+
+//  firstName      isInstructor       favoriteNumbers
