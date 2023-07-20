@@ -51,6 +51,7 @@ function double(arr) {
 
 /////////////////////////////////////////////////////
 // 4. 객체의 빅오
+// 검색을 제외한 모든 것은 O(1)로 취급된다.
 let instructor = {
   firstName: 'Kelly',
   isInstructor: true,
@@ -58,3 +59,28 @@ let instructor = {
 };
 
 //  firstName      isInstructor       favoriteNumbers
+
+/////////////////////////////////////////////////////
+// 5. 배열의 빅오
+// Insertion(입력)/Removal : 어디에 입력/삭제 하는가에 따라 다르다.
+// push와 같이 끝에 들어가는 경우 객체와 동일하다. - O(1)
+// unshift/shift와 같이 앞에 추가/제거하는 경우, 뒤의 배열 index가 모두 변경되어야 한다. - O(N)
+
+// Access(접근) : O(1)
+// Searching : O(N)
+
+let names = ['Michael', 'Melissa', 'Andrea'];
+
+//        "Michael"    "Melissa"    "Andrea"
+//            1            2           3
+
+// Big O 배열 정리
+// push - O(1)
+// pop - O(1)
+// shift - O(N)
+// unShift - O(N)
+// concat - O(N)
+// slice - O(N)
+// splice - O(N)
+// sort - O(N * log N)
+// forEach/map/filter/reduce/etc. - O(N)
