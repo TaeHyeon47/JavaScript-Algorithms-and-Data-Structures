@@ -12,3 +12,11 @@
 // int? float? string?
 // 4. Can the outputs be determined from the inputs? In other words, do I have enough information to solve the problem?
 // 5. How should I label the important pieces of data that are a part of the problem?
+
+// Wrote a function which takes in a string and returns counts of each character in the string.
+charCount('aaaaa'); // {a : 4}
+charCount('hello'); // {h:1, e:1, l:2, 0:1}
+
+('my phone number is 1827763');
+('Hello hi');
+charCount('');
