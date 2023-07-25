@@ -2,6 +2,8 @@
 // 1. Understand the Problem
 // 2. Explore Concrete Examples
 // 3. Break It Down - Explicitly write out the steps you need to take.
+// 4. Solve/Simplify
+// 5. Refactor
 
 //? 첫번째 - 문제 이해(정의)
 // ===============================================================
@@ -71,11 +73,43 @@ function charCount(str) {
   // return an object with keys that are lowercase alphanumeric characters in the string; values should be the counts for those characters.
 }
 
+//? 네번째 Solve/Simplify
 function charCount(str) {
   // make object to return at end
+  const result = {};
   // loop over string, for each character...
-  /// if the char is a number/letter AND a key in object, add one to count
-  /// if the char is a number/letter AND not in object, add it to object and set value to 1
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i].toLowerCase();
+    /// if the char is a number/letter AND a key in object, add one to count
+    if (result[char] > 0) {
+      result[char]++;
+      /// if the char is a number/letter AND not in object, add it to object and set value to 1
+    } else {
+      result[char] = 1;
+    }
+  }
   /// if character is something else (space, period, etc.) don't do anyting
   // return object at end
+  return result;
+}
+
+console.log(charCount('hello'));
+
+//? 다섯번째 Refactor
+
+function charCount(str) {
+  var obj = {};
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i].toLowerCase();
+
+    if (/[a-z0-9]/.test(char)) {
+      if (obj[char] > 0) {
+        obj[char]++;
+      } else {
+        obj[char] = 1;
+      }
+    }
+  }
+  return obj;
 }
