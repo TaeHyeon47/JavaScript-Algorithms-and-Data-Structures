@@ -129,3 +129,14 @@ function charCount(str) {
   }
   return obj;
 }
+
+function isAlphaNumeric(char) {
+  let code = char.charCodeAt(0);
+  if (!code > 47 && code < 58) {
+    // numeric (0-9)
+    return false;
+  }
+  return true;
+}
+
+charCodeAt;
