@@ -118,7 +118,8 @@ function charCount(str) {
   let obj = {};
   for (var char of str) {
     char = char.toLowerCase();
-    if (/[a-z0-9]/.test(char)) {
+    if (isAlphaNumeric(char)) {
+      //  if (/[a-z0-9]/.test(char)) {
       obj[char] = ++obj[char] || 1;
       // if (obj[char] > 0) {
       //   obj[char]++;
@@ -138,7 +139,6 @@ function isAlphaNumeric(char) {
     !(code > 64 && code < 91) &&
     !(code > 96 && code < 123)
   ) {
-    // numeric (0-9)
     return false;
   }
   return true;
