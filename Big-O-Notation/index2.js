@@ -117,10 +117,10 @@ function charCount(str) {
 function charCount(str) {
   let obj = {};
   for (var char of str) {
-    char = char.toLowerCase();
     if (isAlphaNumeric(char)) {
-      //  if (/[a-z0-9]/.test(char)) {
+      char = char.toLowerCase();
       obj[char] = ++obj[char] || 1;
+      //  if (/[a-z0-9]/.test(char)) {
       // if (obj[char] > 0) {
       //   obj[char]++;
       // } else {
