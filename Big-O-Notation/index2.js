@@ -157,5 +157,7 @@ function same(arr1, arr2) {
     }
     arr2.splice(correctIndex, 1);
   }
-  return;
+  return true;
 }
+
+same([1, 2, 3, 2], [9, 1, 4, 5]);
