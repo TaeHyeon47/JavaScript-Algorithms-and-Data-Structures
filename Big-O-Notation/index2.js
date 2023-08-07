@@ -161,3 +161,15 @@ function same(arr1, arr2) {
 }
 
 same([1, 2, 3, 2], [9, 1, 4, 5]);
+
+// 리펙터 코드
+function same(arr1, arr2) {
+  if (arr1.length !== arr1.length) {
+    return false;
+  }
+  let frequencyCounter1 = {};
+  let frequencyCounter2 = {};
+  for (let val of arr1) {
+    frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+  }
+}
