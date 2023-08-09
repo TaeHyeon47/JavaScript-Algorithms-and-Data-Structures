@@ -179,5 +179,11 @@ function same(arr1, arr2) {
     if (!(key ** 2 in frequencyCounter2)) {
       return false;
     }
+    if (frequencyCounter2[key ** 2] !== frequencyCounter1[key]) {
+      return false;
+    }
   }
+  return true;
 }
+
+same([1, 2, 3, 2], [9, 1, 4, 4]);
