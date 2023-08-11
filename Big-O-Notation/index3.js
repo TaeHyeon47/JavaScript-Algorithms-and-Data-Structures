@@ -41,3 +41,18 @@ function same(arr1, arr2) {
 }
 
 same([1, 2, 3, 2], [9, 1, 4, 4]);
+
+// 에너그램 도전 과제
+function validAnagram(first, second) {
+  if (first.length !== second.length) {
+    return false;
+  }
+
+  const lookup = {};
+
+  for (let i = 0; i < first.length; i++) {
+    let letter = first[i];
+
+    lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
+  }
+}
