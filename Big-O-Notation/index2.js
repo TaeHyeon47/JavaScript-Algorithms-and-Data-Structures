@@ -93,9 +93,7 @@ function charCount(str) {
   return result;
 }
 
-console.log(charCount('hello'));
-
-//? 다섯번째 Refactor
+//? 다섯번째 Refactor - charCount 함수 개선 예시
 
 function charCount(str) {
   var obj = {};
@@ -114,15 +112,21 @@ function charCount(str) {
   return obj;
 }
 
+// for-of문 적용 개선
 function charCount(str) {
   let obj = {};
-  for (var char of str) {
-    if (isAlphaNumeric(char)) {
-      char = char.toLowerCase();
-      obj[char] = ++obj[char] || 1;
+
+  for (let char of str) {
+    //? for문에서 사용하는 [i]가 생략되어도 괜찮음.
+    char = str.toLowerCase();
+    if (/[a-z0-9]/.test(char)) {
+      if (obj[char] > 0) {
+        obj[char]++;
+      } else {
+        obj[char] = 1;
+      }
     }
   }
-  return obj;
 }
 
 function isAlphaNumeric(char) {
