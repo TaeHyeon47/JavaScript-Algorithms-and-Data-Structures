@@ -117,8 +117,12 @@ function charCount(str) {
   let obj = {};
 
   for (let char of str) {
-    //? for문에서 사용하는 [i]가 생략되어도 괜찮음.
-    char = str.toLowerCase();
+    //? for문에서 사용하는 [i]가 생략하여 사용 가능.
+    // for ... of 문은 내부적으로 이터레이터의 next 메서드를 호출하여 이터러블을 순회하여
+    // next 메서드가 반환한 이터레이터 리절트 객체의 value 프로퍼티 값을 for...of 문의 변수에 할당한다.
+    // 그리도 이터레이터 리절트 객체의 done 프로퍼티 값이 false이면 이터러블의 순회를 계속하고
+    // true이면 이터러블의 순회를 중단한다.
+    char = char.toLowerCase();
     if (/[a-z0-9]/.test(char)) {
       if (obj[char] > 0) {
         obj[char]++;
@@ -127,6 +131,7 @@ function charCount(str) {
       }
     }
   }
+  return obj;
 }
 
 function isAlphaNumeric(char) {
