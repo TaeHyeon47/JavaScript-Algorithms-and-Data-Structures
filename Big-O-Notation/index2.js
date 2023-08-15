@@ -95,6 +95,7 @@ function charCount(str) {
 
 //? 다섯번째 Refactor - charCount 함수 개선 예시
 
+//* 1. 초기 코드
 function charCount(str) {
   var obj = {};
 
@@ -112,7 +113,7 @@ function charCount(str) {
   return obj;
 }
 
-// for-of문 적용 개선
+//* 2. for-of문 적용 개선
 function charCount(str) {
   let obj = {};
 
@@ -134,7 +135,7 @@ function charCount(str) {
   return obj;
 }
 
-// "||"문을 사용하여 개선
+//* 3. "||"문을 사용하여 개선
 function charCount(str) {
   let obj = {};
 
@@ -147,13 +148,29 @@ function charCount(str) {
   return obj;
 }
 
+//* 4. charCodeAt 활용하여 정규식 대체(속도 향상)
+'hi'.charCodeAt(0); // 104 반환. h에 대한 숫자
+'i'.charCodeAt(0); // 105 반환. i에 대한 숫자
+'j'.charCodeAt(0); // 106 반환. j에 대한 숫자
+
+function charCount(str) {
+  let obj = {};
+  for (let char of str) {
+    if (isAlphaNumeric(char)) {
+      char = char.toLowerCase();
+      obj[char] = ++obj[char] || 1;
+    }
+  }
+  return obj;
+}
+
 function isAlphaNumeric(char) {
   let code = char.charCodeAt(0);
   if (
     !code > 47 &&
-    code < 58 &&
-    !(code > 64 && code < 91) &&
-    !(code > 96 && code < 123)
+    code < 58 && // numeric(0-9)
+    !(code > 64 && code < 91) && // upper alpha (A-Z)
+    !(code > 96 && code < 123) // lower alpha (a-z)
   ) {
     return false;
   }
