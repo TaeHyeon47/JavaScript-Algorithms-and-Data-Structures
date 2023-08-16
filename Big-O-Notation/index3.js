@@ -1,3 +1,4 @@
+//? 빈도수 세기 패턴
 // Write a function called same, which accepts two arrays.
 // The function should return true if every value in the
 // array has it's corresponding value squared in the second array.
@@ -7,7 +8,7 @@
 // same([1,2,3], [1, 9]) // false
 // same([1, 2, 1], [4, 4, 1]) // false
 
-//? 빈도수 세기 패턴
+// 첫번째 배열에 Loop를 적용하여 두번째 배열의 하위 루프에서 각 값을 확인하는 방식.
 function same(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
@@ -25,7 +26,9 @@ function same(arr1, arr2) {
 
 same([1, 2, 3, 2], [9, 1, 4, 5]);
 
-// 리펙터 코드
+// 리펙토리 코드
+// 각 배열에 한 번씩 개별적으로 루프를 적용
+//* 중요 : 두 개의 Loop가 중첩된 개별 루프보다 훨씬 낫다.
 function same(arr1, arr2) {
   if (arr1.length !== arr1.length) {
     return false;
