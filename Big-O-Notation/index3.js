@@ -59,12 +59,16 @@ function validAnagram(first, second) {
   if (first.length !== second.length) {
     return false;
   }
-
   const lookup = {};
-
   for (let i = 0; i < first.length; i++) {
     let letter = first[i];
 
     lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
   }
 }
+
+//? 다중포인터 패턴
+// Write a function called sumZero which accepts a sorted
+// array of integers. The function should find the first pair
+// where the sum is 0. Return an array that includes both
+// values that sum to zero or undefined if a pair does not exit
