@@ -15,6 +15,8 @@ function same(arr1, arr2) {
   }
 
   for (let i = 0; i < arr1.length; i++) {
+    //! indexOf 기능이 중첩된 루프이다
+    //배열 길이가 1000이면 백만번의 반복이 이루어진다...
     let correctIndex = arr2.indexOf(arr1[i] ** 2);
     if (correctIndex === -1) {
       return false;
@@ -29,6 +31,9 @@ same([1, 2, 3, 2], [9, 1, 4, 5]);
 // 리펙토리 코드
 // 각 배열에 한 번씩 개별적으로 루프를 적용
 //* 중요 : 두 개의 Loop가 중첩된 개별 루프보다 훨씬 낫다.
+// 아래는 2n이지만, 중첩 Loop는 n의 제곱이 되기 때문이다.
+// Time Complexity - O(n)
+//? 중첩이 없어서 3000번의 반복으로 끝이난다.
 function same(arr1, arr2) {
   if (arr1.length !== arr1.length) {
     return false;
@@ -54,7 +59,14 @@ function same(arr1, arr2) {
 
 same([1, 2, 3, 2], [9, 1, 4, 4]);
 
-// 에너그램 도전 과제
+//////////////////////////////////////////
+// 애너그램 도전 과제
+// 애너그램 정의
+// Given two strings, write a function to determine if the
+// second string is an anagram of the first. An anagram is
+// a word, phrase, or name formed by rearranging the
+// letters of another, such as cinema, formed from iceman.
+
 function validAnagram(first, second) {
   if (first.length !== second.length) {
     return false;
