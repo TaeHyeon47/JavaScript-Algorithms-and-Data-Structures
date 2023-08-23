@@ -70,6 +70,39 @@ same([1, 2, 3, 2], [9, 1, 4, 4]);
 // 확인하는 함수를 작성합니다. 애너그램은 다른 글자의 글자를 재배열하여 형성된 단어,
 // 구 또는 이름입니다. (예시: cinema -> iceman)
 
+//? 나의 솔루션
+function validAnagram(firstString, secondString) {
+  if (firstString.length != secondString.length) return false;
+
+  // 내가 생각한 솔루션
+  // String을 객체로 변환시키고, 중복되는 경우 카운터 세기
+  // 같은 알파벳의 숫자를 모두 비교하여 일치하면 true 반환
+  // 그 이외의 경우는 모두 false로 반환
+
+  // 객체 선언
+  let firstStringObject = {};
+  let secondStringObejct = {};
+
+  // String을 알파벳별 객체로 변환
+  for (let alpha of firstString) {
+    console.log(alpha);
+    firstStringObject[alpha] = (firstStringObject[alpha] || 0) + 1;
+  }
+
+  for (let alpha of secondString) {
+    secondStringObejct[alpha] = (secondStringObejct[alpha] || 0) + 1;
+  }
+
+  for (let key in firstStringObject) {
+    if (firstStringObject[key] !== secondStringObejct[key]) return false;
+  }
+
+  return true;
+}
+
+validAnagram('anagram', 'nagaram'); // true
+
+//? 강의 솔루션
 function validAnagram(first, second) {
   if (first.length !== second.length) {
     return false;
