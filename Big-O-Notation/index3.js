@@ -129,12 +129,25 @@ function validAnagram(first, second) {
   return true;
 }
 
-//? 다중포인터 패턴
+//? 다중포인터(Multiple pointers) 정의
+// Creating pointers or values that correspond to an
+// index or position and move towards the beginning,
+// end or middle based on a certain condition
+
+// Very efficient for solving problems
+// with minimal space complexity as well
+
+// 문제
 // Write a function called sumZero which accepts a sorted
 // array of integers. The function should find the first pair
 // where the sum is 0. Return an array that includes both
 // values that sum to zero or undefined if a pair does not exit
+// ex) sumZero([-3, -2, -1, 0, 1, 2, 3]) // [-3, 3]
+// ex) sumZero([-2, 0, 1, 3]) // undefined
 
+// NAIVE SOLUTION
+// Time Complexity - 0(N^2)
+// Space Complexity - 0(1)
 function sumZero(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
