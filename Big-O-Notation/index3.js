@@ -160,6 +160,8 @@ function sumZero(arr) {
   }
 }
 
+// Time Complexity - 0(N)
+// Space Complexity - 0(1)
 function sumZero(arr) {
   let left = 0;
   let right = arr.length - 1;
