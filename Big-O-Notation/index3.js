@@ -162,6 +162,8 @@ function sumZero(arr) {
 
 // Time Complexity - 0(N)
 // Space Complexity - 0(1)
+// while의 조건에 left가 right보다 작다고 코드를 만들어야지만,
+// 홀수와 같이 짝이 안맞는 경우 자기자신을 연산하는 오류를 방지할 수 있다.
 function sumZero(arr) {
   let left = 0;
   let right = arr.length - 1;
