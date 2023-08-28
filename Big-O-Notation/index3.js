@@ -177,7 +177,7 @@ function sumZero(arr) {
   }
 }
 
-// 다중 포인터 : 고유값을 세는 도전 과제
+//? 다중 포인터 : 고유값을 세는 도전 과제
 // countUniqueValue
 // Implement a function called countUniqueValues,
 // which accepts a sorted array, and counts the
@@ -191,3 +191,11 @@ function sumZero(arr) {
 // countUniqueValues([-2, -1, -1, 0, 1]) // 4
 // Time Complexity - O(n)
 // Space Complexity - O(n)
+
+// 나의 솔루션 1 : Set을 활용한 중복 제거
+function countUniqueValues(arr) {
+  const uniqueValues = [...new Set(arr)];
+  return uniqueValues.length;
+}
+
+countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]);
