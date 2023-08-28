@@ -153,8 +153,6 @@ function validAnagram(first, second) {
 function sumZero(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
-      console.log('arr[i]', arr[i]);
-      console.log('arr[j]', arr[j]);
       if (arr[i] + arr[j] === 0) return [arr[i], arr[j]];
     }
   }
@@ -178,3 +176,18 @@ function sumZero(arr) {
     }
   }
 }
+
+// 다중 포인터 : 고유값을 세는 도전 과제
+// countUniqueValue
+// Implement a function called countUniqueValues,
+// which accepts a sorted array, and counts the
+// unique values in the array. There can be negative
+// numbers in the array. but it will always be sorted.
+// 정렬된 배열을 받아들이고 배열의 고유 값을 세는 countUniqueValues라는 함수를 구현합니다. 배열에 음수가 있을 수 있지만 항상 정렬됩니다.
+
+// countUniqueValues([1, 1, 1, 1, 1, 2]) // 2
+// countUniqueValues([1, 2, 3, 4, 4, 7, 7, 12, 12, 13]) // 7
+// countUniqueValues([]) // 0
+// countUniqueValues([-2, -1, -1, 0, 1]) // 4
+// Time Complexity - O(n)
+// Space Complexity - O(n)
