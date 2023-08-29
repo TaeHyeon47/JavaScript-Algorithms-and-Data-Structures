@@ -199,3 +199,14 @@ function countUniqueValues(arr) {
 }
 
 countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]);
+
+// 강의 솔루션
+function countUniqueValues(arr) {
+  var i = 0;
+  for (var j = i; j < arr.length; j++) {
+    if (arr[i] !== arr[j]) {
+      i++;
+      arr[i] = arr[j];
+    }
+  }
+}
