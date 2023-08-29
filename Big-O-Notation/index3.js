@@ -35,7 +35,7 @@ same([1, 2, 3, 2], [9, 1, 4, 5]);
 // Time Complexity - O(n)
 //? 중첩이 없어서 3000번의 반복으로 끝이난다.
 function same(arr1, arr2) {
-  if (arr1.length !== arr1.length) {
+  if (arr1.length !== arr2.length) {
     return false;
   }
   let frequencyCounter1 = {};
@@ -85,7 +85,6 @@ function validAnagram(firstString, secondString) {
 
   // String을 알파벳별 객체로 변환
   for (let alpha of firstString) {
-    console.log(alpha);
     firstStringObject[alpha] = (firstStringObject[alpha] || 0) + 1;
   }
 
@@ -183,7 +182,8 @@ function sumZero(arr) {
 // which accepts a sorted array, and counts the
 // unique values in the array. There can be negative
 // numbers in the array. but it will always be sorted.
-// 정렬된 배열을 받아들이고 배열의 고유 값을 세는 countUniqueValues라는 함수를 구현합니다. 배열에 음수가 있을 수 있지만 항상 정렬됩니다.
+// 정렬된 배열을 받아들이고 배열의 고유 값을 세는 countUniqueValues라는 함수를 구현합니다.
+// 배열에 음수가 있을 수 있지만 항상 정렬됩니다.
 
 // countUniqueValues([1, 1, 1, 1, 1, 2]) // 2
 // countUniqueValues([1, 2, 3, 4, 4, 7, 7, 12, 12, 13]) // 7
@@ -192,7 +192,7 @@ function sumZero(arr) {
 // Time Complexity - O(n)
 // Space Complexity - O(n)
 
-// 나의 솔루션 1 : Set을 활용한 중복 제거
+// 나의 솔루션 : Set을 활용한 중복 제거
 function countUniqueValues(arr) {
   const uniqueValues = [...new Set(arr)];
   return uniqueValues.length;
