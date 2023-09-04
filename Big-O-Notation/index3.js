@@ -211,7 +211,7 @@ function countUniqueValues(arr) {
   }
 }
 
-// 슬라이딩 윈도우 (Sliding window) 문제 정의
+// 슬라이딩 윈도우 (Sliding window) or 기준점 간 이동 배열 패턴 문제 정의
 // This pattern involves creating a window which can either be an array or
 // window which can either be an array or number from one position to another
 // Depending on a certain condition, the window either increases or closes
@@ -230,6 +230,7 @@ function countUniqueValues(arr) {
 // maxSubarraySum([4, 2, 1, 6, 2], 4) // 13
 // maxSubarraySum([], 4) // null
 
+// 솔루션 1
 function maxSubarraySum(arr, num) {
   if (num > arr.length) {
     return null;
