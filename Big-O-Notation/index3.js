@@ -81,7 +81,7 @@ function validAnagram(firstString, secondString) {
 
   // 객체 선언
   let firstStringObject = {};
-  let secondStringObejct = {};
+  let secondStringObject = {};
 
   // String을 알파벳별 객체로 변환
   for (let alpha of firstString) {
@@ -89,11 +89,12 @@ function validAnagram(firstString, secondString) {
   }
 
   for (let alpha of secondString) {
-    secondStringObejct[alpha] = (secondStringObejct[alpha] || 0) + 1;
+    secondStringObject[alpha] = (secondStringObject[alpha] || 0) + 1;
   }
 
+  //? 브라우저에 따라 다르지만, 객체의 순서는 자동으로 정렬되어 이와 같은 솔루션을 작성.
   for (let key in firstStringObject) {
-    if (firstStringObject[key] !== secondStringObejct[key]) return false;
+    if (firstStringObject[key] !== secondStringObject[key]) return false;
   }
 
   return true;
@@ -203,12 +204,13 @@ countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]);
 // 강의 솔루션
 function countUniqueValues(arr) {
   var i = 0;
-  for (var j = i; j < arr.length; j++) {
+  for (var j = 1; j < arr.length; j++) {
     if (arr[i] !== arr[j]) {
       i++;
       arr[i] = arr[j];
     }
   }
+  return i + 1;
 }
 
 // 슬라이딩 윈도우 (Sliding window) or 기준점 간 이동 배열 패턴 문제 정의
