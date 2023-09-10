@@ -1,8 +1,7 @@
 # JavaScript-Algorithms-and-Data-Structures
 JavaScript Algorithms and Data Structures
 
-
-자바스크립트 알고리즘 관련 내용을 공부하고 정리하는 레퍼지토리입니다. 아래의 내용을 공부 했습니다.
+Udemy 강사 Colt steele의 자바스크립트 알고리즘 강의를 기반으로 공부한 레퍼지토리입니다. 강의 커리큘럼에 따라 아래의 내용을 공부 했습니다.
 
 1. 빅오 표기법
 2. 배열과 오브젝트의 성능 평가
