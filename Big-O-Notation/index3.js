@@ -271,3 +271,10 @@ function maxSubarraySum(arr, num) {
   }
   return maxSum;
 }
+
+// Divide and Conquer 분할과 정복 패턴
+// This pattern involves dividing a data set
+// into smaller chunks and then repeating a
+// process with a subset of data.
+
+// This pattern can tremendously decrease time complexity
