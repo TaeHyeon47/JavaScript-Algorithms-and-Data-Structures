@@ -239,24 +239,20 @@ function maxSubarraySum(arr, num) {
     return null;
   }
   var max = -Infinity;
-  console.log('arr.length', arr.length);
   for (let i = 0; i < arr.length - num + 1; i++) {
     temp = 0;
     for (let j = 0; j < num; j++) {
-      console.log('num', num);
-
       temp += arr[i + j];
-      console.log('temp', temp);
     }
     if (temp > max) {
       max = temp;
     }
-    console.log('max', max);
   }
   return max;
 }
 
 // 리팩토링 코드
+// Time Complexity - O(N)
 function maxSubarraySum(arr, num) {
   let maxSum = 0;
   let tempSum = 0;
@@ -267,6 +263,7 @@ function maxSubarraySum(arr, num) {
   tempSum = maxSum;
   for (let i = num; i < arr.length; i++) {
     tempSum = tempSum - arr[i - num] + arr[i];
+    console.log('tempSum', tempSum);
     maxSum = Math.max(maxSum, tempSum);
   }
   return maxSum;
@@ -286,3 +283,23 @@ function maxSubarraySum(arr, num) {
 // search([1, 2, 3, 4, 5, 6], 4) // 3
 // search([1, 2, 3, 4, 5, 6], 6) // 5
 // search([1, 2, 3, 4, 5, 5], 11) // -1
+
+function search(array, val) {
+  let min = 0;
+  let max = array.length - 1;
+
+  while (min <= max) {
+    let middle = Math.floor((min + max) / 2);
+    let currentElement = array[middle];
+
+    if (array[middle] < val) {
+      min = middle + 1;
+    } else if (array[middle] < val) {
+      max = middle - 1;
+    } else {
+      return middle;
+    }
+  }
+
+  return -1;
+}
