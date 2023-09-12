@@ -284,6 +284,7 @@ function maxSubarraySum(arr, num) {
 // search([1, 2, 3, 4, 5, 6], 6) // 5
 // search([1, 2, 3, 4, 5, 5], 11) // -1
 
+// Time Complexity - Log(N) - Binary Search!
 function search(array, val) {
   let min = 0;
   let max = array.length - 1;
