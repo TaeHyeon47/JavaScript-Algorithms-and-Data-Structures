@@ -280,10 +280,17 @@ function maxSubarraySum(arr, num) {
 // Given a sorted array of integers, write a function called search,
 // that accepts a value and returns the index where the value passed
 // to the function is located. If the value is not found, return -1
+
+// 4의 index 값 반환
 // search([1, 2, 3, 4, 5, 6], 4) // 3
+// 6의 index 값 반환
 // search([1, 2, 3, 4, 5, 6], 6) // 5
+// 11의 index 값 없으므로 -1 반환
 // search([1, 2, 3, 4, 5, 5], 11) // -1
 
+// A naive solution
+
+// Refactor Code
 // Time Complexity - Log(N) - Binary Search!
 function search(array, val) {
   let min = 0;

@@ -10,7 +10,7 @@
 //* A process (a function in our case) that calls itself (자기자신을 호출하는 함수)
 
 // 재귀는 많은 곳에서 활용된다
-// JSON.parse / JSON.stringify
+// JSON.parse / JSON.stringify(내부 코드에 구현되어 있음)
 // document.getElementById and DOM traversal algorithms
 // Object traversal(객체 순회)
 // We will see it with more complex data structures (복잡한 데이터 구조)
