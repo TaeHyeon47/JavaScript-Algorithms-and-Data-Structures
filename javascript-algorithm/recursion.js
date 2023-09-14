@@ -15,3 +15,25 @@
 // Object traversal(객체 순회)
 // We will see it with more complex data structures (복잡한 데이터 구조)
 // It's sometimes a cleaner alternative to iteration (때로는 반복 대신 재귀를 사용하는게 더 깔끔)
+
+function takeShower() {
+  return 'Showering!';
+}
+
+function eatBreakfast() {
+  let meal = cookFood();
+  return 'Eating ${meal}';
+}
+
+function cookFood() {
+  let items = ['Oatmeal', 'Eggs', 'Pretein Shake'];
+  return items[Math.floor(Math.random() * items.length)];
+}
+
+function wakeUp() {
+  takeShower();
+  eatBreakfast();
+  console.log('Ok ready to go to work!');
+}
+
+wakeUp();
