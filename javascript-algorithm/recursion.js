@@ -37,3 +37,15 @@ function wakeUp() {
 }
 
 wakeUp();
+
+/// 첫번째 재귀 함수
+
+function countDown(num) {
+  if (num <= 0) {
+    console.log('All Done!');
+    return;
+  }
+  console.log(num);
+  num--;
+  countDown(num);
+}
