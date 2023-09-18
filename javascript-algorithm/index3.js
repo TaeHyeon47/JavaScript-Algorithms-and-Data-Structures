@@ -270,10 +270,10 @@ function maxSubarraySum(arr, num) {
 }
 
 // Divide and Conquer 분할과 정복 패턴
+// 주로 배열이나 문자열 같은 큰 규모의 데이터셋을 처리하는데 사용
 // This pattern involves dividing a data set
 // into smaller chunks and then repeating a
 // process with a subset of data.
-
 // This pattern can tremendously decrease time complexity
 
 // An Example
