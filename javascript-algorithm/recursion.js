@@ -16,6 +16,11 @@
 // We will see it with more complex data structures (복잡한 데이터 구조)
 // It's sometimes a cleaner alternative to iteration (때로는 반복 대신 재귀를 사용하는게 더 깔끔)
 
+// The call stack
+// It's a stack data structure - we'll talk about that later!
+// Any time a function is invoked it is placed (pushed) on the top of the call stack
+// When JavaScript sees the return keyword or when the function ends, the compiler will remove(pop)
+
 function takeShower() {
   return 'Showering!';
 }
