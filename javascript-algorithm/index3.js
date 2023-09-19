@@ -291,6 +291,7 @@ function maxSubarraySum(arr, num) {
 // A naive solution
 // Linear Search
 // Time Complexity O(N)
+// 시작부터 값을 모두 검사하면 시간이 많이 걸린다.
 function search(arr, val) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === val) {
@@ -303,6 +304,7 @@ function search(arr, val) {
 // Refactor Code
 // Binary Search!
 // Time Complexity - Log(N)
+// 중간값과 비교하여 필요없는 절반은 버리고 시작하여 빠르다.
 function search(array, val) {
   let min = 0;
   let max = array.length - 1;
