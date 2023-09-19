@@ -269,7 +269,7 @@ function maxSubarraySum(arr, num) {
   return maxSum;
 }
 
-// Divide and Conquer 분할과 정복 패턴
+// Divide and Conquer 분할과 정복 패턴 (강의 35)
 // 주로 배열이나 문자열 같은 큰 규모의 데이터셋을 처리하는데 사용
 // This pattern involves dividing a data set
 // into smaller chunks and then repeating a
@@ -289,9 +289,20 @@ function maxSubarraySum(arr, num) {
 // search([1, 2, 3, 4, 5, 5], 11) // -1
 
 // A naive solution
+// Linear Search
+// Time Complexity O(N)
+function search(arr, val) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === val) {
+      return i;
+    }
+  }
+  return -1;
+}
 
 // Refactor Code
-// Time Complexity - Log(N) - Binary Search!
+// Binary Search!
+// Time Complexity - Log(N)
 function search(array, val) {
   let min = 0;
   let max = array.length - 1;
@@ -302,7 +313,7 @@ function search(array, val) {
 
     if (array[middle] < val) {
       min = middle + 1;
-    } else if (array[middle] < val) {
+    } else if (array[middle] > val) {
       max = middle - 1;
     } else {
       return middle;
