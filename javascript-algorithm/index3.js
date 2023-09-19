@@ -304,7 +304,7 @@ function search(arr, val) {
 // Refactor Code
 // Binary Search!
 // Time Complexity - Log(N)
-// 중간값과 비교하여 필요없는 절반은 버리고 시작하여 빠르다.
+// 배열의 중간값을 기준으로 필요없는 절반은 버리고 일치하는 값을 검색하여 빠르다.
 function search(array, val) {
   let min = 0;
   let max = array.length - 1;
