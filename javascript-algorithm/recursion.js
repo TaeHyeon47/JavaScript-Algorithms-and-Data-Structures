@@ -99,3 +99,11 @@ function sumRange(num) {
 // Can you spot the base case?
 // Do you notice the different input?
 // What would happen if we didn`t return?
+
+function factorial(num) {
+  let total = 1;
+  for (let i = num; i > 0; i--) {
+    total *= i;
+  }
+  return total;
+}
