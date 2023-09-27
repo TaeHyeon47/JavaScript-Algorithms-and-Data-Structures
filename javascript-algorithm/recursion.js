@@ -107,3 +107,9 @@ function factorial(num) {
   }
   return total;
 }
+
+// 재귀 호출로 팩토리얼 구현하기
+function factorial(num) {
+  if(num === 1) return 1;
+  return num * factorial(num-1)
+}
