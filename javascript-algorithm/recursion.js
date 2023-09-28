@@ -122,8 +122,41 @@ function factorial(num) {
 }
 
 /////////////////////////////////////////////////////
-// 재귀 호출로 팩토리얼 구현하기
+//? 재귀 호출로 팩토리얼 구현하기
 function factorial(num) {
   if(num === 1) return 1;
   return num * factorial(num-1)
 }
+
+/////////////////////////////////////////////////////
+//? Helper 메소드 재귀
+
+// 배열에서 홀수의 값만 수집하는 것과 같은 작업을 수행 중이라면, 헬퍼 메소드 재귀를 사용하면 식은 죽 먹기다.
+// 헬퍼 메소드 재귀는 일종의 결과를 컴파일 할 때 흔히 사용되는 패턴이다.
+
+// let result = [];
+// function collectOddValues(arr) ...
+// Helper 메소드가 없다면 상기에 나와있는 코드처럼 'result'를 바깥에 위치시켜야한다.
+
+function collectOddValues(arr){
+    
+  let result = [];
+
+  function helper(helperInput){
+      if(helperInput.length === 0) {
+          return;
+      }
+      
+      if(helperInput[0] % 2 !== 0){
+          result.push(helperInput[0])
+      }
+      
+      helper(helperInput.slice(1))
+  }
+  
+  helper(arr)
+
+  return result;
+}
+
+collectOddValues([1,2,3,4,5,6,7,8,9])
