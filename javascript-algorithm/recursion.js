@@ -162,7 +162,7 @@ function collectOddValues(arr){
 collectOddValues([1,2,3,4,5,6,7,8,9])
 
 /////////////////////////////////////////////////////
-//? 순수 재귀
+//? 순수 재귀(Pure Recursion)
 
 function collectOddValues(arr){
   let newArr = [];
@@ -185,3 +185,11 @@ collectOddValues([1,2,3,4,5])
 //                          [3].concat(collectOddValues([4,5]))
 //                                        [].concat(collectOddValues([5]))
 //                                                     [5].concat(collectOddValues([]))
+
+//? 순수 재귀 팁 (Pure Recursion tips)
+// 1. For arrays, use methods like slice, the spread, operator, and concat that
+// make copies of arrays so you do not mutate them. 
+// 2. Remember that strings are immutable so you will need to use methods like 
+// slice, substr, or substring to make copies of strins
+// 3. To make copies of objects use Object.assign, or the spread operator
+
