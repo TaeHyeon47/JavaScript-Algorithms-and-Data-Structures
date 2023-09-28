@@ -204,10 +204,12 @@ collectOddValues([1,2,3,4,5])
 // power(2,2) // 4
 // power(2,4) // 16
 
+// 강의 솔루션과 동일
 function power(base, exponent){
   if (exponent === 0) return 1;
   return base * power(base, exponent - 1);
 }
+
 
 // factorial
 // 숫자를 받아 해당 숫자의 계승(팩토리얼)을 반환하는 팩토리얼 함수를 작성하시오.
@@ -219,9 +221,15 @@ function power(base, exponent){
 // factorial(4) // 24
 // factorial(7) // 5040
 
+// 나의 솔루션
 function factorial(num){
   if (num === 0 ) return 1;
   return num * factorial(num - 1);
 }
 
-
+// 강의 솔루션
+function factorial(x){
+  if (x < 0 ) return 0;
+  if (x <= 1 ) return 1;
+  return x * factorial(x-1);
+}
