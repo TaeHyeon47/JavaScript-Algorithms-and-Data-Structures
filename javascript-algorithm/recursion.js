@@ -48,6 +48,7 @@ function wakeUp() {
 
 wakeUp();
 
+////////////////////////////////////////////////////////////
 //? 첫번째 재귀 함수
 // How recursive functions work
 // Invoke the same function with a different input until you reach your base case!
@@ -90,16 +91,26 @@ function countDown(num) {
 
 countDown(5);
 
-//? 두번쨰 재귀 함수
-function sumRange(num) {
-  if (num === 1) return 1;
-  return num + sumRange(num - 1);
+///////////////////////////////////////////////////////
+//? 두번째 재귀 함수
+function sumRange(num){
+  if(num === 1) return 1; 
+  return num + sumRange(num-1);
 }
 
-// Can you spot the base case?
-// Do you notice the different input?
-// What would happen if we didn`t return?
+// 'sumRange(3)'는 아래의 주석문과 같은 연산 과정을 통해 6을 반환한다.
+// sumRagne(3)은 최종적으로 3이 되고, sumRagne(1)은 최종적으로 1의 값이 된다.
+sumRange(3) 
+  // return 3 + sumRange(2);
+                // return 2 + sumRange(1);
+                              // return 1; 
 
+// sumRange 함수는 종료조건(Base Case)가 중요하다는 것을 알 수 있다.
+// Call Stack 쌓여있는 함수 호출이 기다리는 값에 추가되기 때문이다.
+// 즉, Base Case가 추가되고 나면, 함수를 거꾸로(아래에서부터 위로) 합산하기 시작한다.
+
+//////////////////////////////////////////////////////
+//? 반복문으로 팩토리얼 구현하기
 function factorial(num) {
   let total = 1;
   for (let i = num; i > 0; i--) {
@@ -108,6 +119,7 @@ function factorial(num) {
   return total;
 }
 
+/////////////////////////////////////////////////////
 // 재귀 호출로 팩토리얼 구현하기
 function factorial(num) {
   if(num === 1) return 1;
