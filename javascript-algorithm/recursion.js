@@ -292,3 +292,9 @@ function fib(num){
   
   return fibArr[--num]
 }
+
+// 강의 솔루션
+function fib(n){
+  if (n <= 2) return 1;
+  return fib(n-1) + fib(n-2);
+}
