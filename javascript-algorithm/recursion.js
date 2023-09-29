@@ -259,3 +259,36 @@ function recursiveRange(num){
   return num + recursiveRange(num - 1);
 }
 
+// fib
+// 숫자를 받아 피보나치 수열의 n번째 숫자를 반환하는 fib라는 재귀 함수를 작성하시오. 
+// 피보나치 수열은 1, 1로 시작하는 1, 1, 2, 3, 5, 8, ...의 정수의 수열이며, 
+// 모든 수는 이전 두 수의 합과 같다는 것을 명심하세요.
+
+// fib(4) // 3
+// fib(10) // 55
+// fib(28) // 317811
+// fib(35) // 9227465
+
+// 나의 솔루션
+function fib(num){
+  let fibArr = [];
+  let initNum = 1;
+  if (num === 0) return 1;
+  
+  function helper(helperNum) {
+      if(fibArr.length - 1 === num) return;
+      
+      if (fibArr.length === 0 || fibArr.length === 1 ){
+          fibArr.push(initNum)
+      } else {
+          const lastIndex = fibArr.slice(fibArr.length - 1)[0];
+          const secondLastIndex = fibArr.slice(fibArr.length - 2)[0];
+          fibArr.push(lastIndex + secondLastIndex)
+      }
+      helper()
+  }
+  
+  helper(num);
+  
+  return fibArr[--num]
+}
