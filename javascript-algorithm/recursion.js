@@ -233,3 +233,15 @@ function factorial(x){
   if (x <= 1 ) return 1;
   return x * factorial(x-1);
 }
+
+
+// productOfArray
+// 숫자 배열을 받아 모든 숫자의 곱을 반환하는 productOfArray라는 함수를 작성하시오.
+// productOfArray([1,2,3]) // 6
+// productOfArray([1,2,3,10]) // 60
+
+// 강의 솔루션과 동일
+function productOfArray(arrNum) {
+  if (arrNum.length === 0) return 1;
+  return arrNum[0] * productOfArray(arrNum.slice(1));
+}
