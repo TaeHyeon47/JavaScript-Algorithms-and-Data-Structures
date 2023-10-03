@@ -13,3 +13,9 @@
 // 1. Sorting is an incredibly common task, so it's good to know how it works
 // 2. There are many different ways to sort things, and different techniques
 // have their own advantages and disadvantages.
+
+// Objectives
+// 1. Implement bubble sort
+// 2. Implement selection sort
+// 3. Implement insertion sort
+// 4. Understand why it is important to learn these simpler sorting algorithms
