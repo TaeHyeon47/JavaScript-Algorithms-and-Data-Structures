@@ -100,6 +100,7 @@ function sumRange(num) {
 // Do you notice the different input?
 // What would happen if we didn`t return?
 
+// 반복문으로 팩토리얼 구현하기
 function factorial(num) {
   let total = 1;
   for (let i = num; i > 0; i--) {
