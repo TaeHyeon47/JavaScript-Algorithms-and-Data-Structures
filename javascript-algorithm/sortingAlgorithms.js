@@ -19,3 +19,9 @@
 // 2. Implement selection sort
 // 3. Implement insertion sort
 // 4. Understand why it is important to learn these simpler sorting algorithms
+
+function numberCompare(num1, num2) {
+  return num1 - num2;
+}
+
+[6, 4, 15, 10].sort(numberCompare);
