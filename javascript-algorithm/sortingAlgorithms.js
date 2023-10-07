@@ -58,3 +58,38 @@ function compareByLen(str1, str2) {
 }
 
 ['Steele', 'Colt', 'Data Structures', 'Algorithms'].sort(compareByLen);
+
+//? BubbleSort (버블정렬)
+// A Sorting algorithm where the largest values bubble up to the top!
+// 버블 정렬의 개념은 오름차순(작은 숫자에서 큰 숫자로)으로 정렬을 한다면, 더 큰 숫자가 한 번에 하나씩 뒤(Top)로 이동 한다는 개념이다.
+
+// 버를 정렬의 장독 방식은 루프를 돌면서 각 항목을 다음 항목(해당 항목의 오른쪽에 있는 항목)과 비교하는 것이다.
+// 어떤 항목이 더 크면 교환을 하고, 다음 항목과 비교하고, 다음 항목보다 더 크면 또 교환을 하고, 다시 다음 항목과 비교한다.
+// 비주얼 알고 사이트 "https://visualgo.net/en/sorting?slide=1"에서 그림으로 확인할 수 있다.
+// [5, 3, 4, 1, 2]
+// [3, 5, 4, 1, 2]
+// [3, 4, 5, 1, 2]
+// [3, 4, 1, 5, 2]
+// [3, 4, 1, 2, 5]
+
+// Before we sort, we must swap!
+// Many sorting algorithms involve some type of wapping functionality
+// (e.g. swapping to numbers to put them in order)
+
+// ES5
+function swap(arr, idx1, idx2) {
+  var temp = arr[idx1];
+  arr[idx1] = arr[idx2];
+  arr[idx2] = temp;
+}
+
+// ES2015
+const swap = (arr, idx1, idx2) => {
+  [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+};
+
+// BubbleSort Pseudocode
+// 1. Start looping from with a variable called i the end of the array towards the beginning.
+// 2. Start an inner loop with a variable called j from the beginning until i - 1
+// 3. If arr[j] is greater than arr[j+1], swap those two values!
+// 4. Return the sorted array
