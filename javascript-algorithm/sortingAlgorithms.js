@@ -134,7 +134,7 @@ bubbleSort([37, 45, 29, 8, 15, 77, 100]);
 // 3. If arr[j] is greater than arr[j+1], swap those two values!
 // 4. Return the sorted array
 
-// 최적화 버블 정렬
+// undefined 제거 버블 정렬
 function bubbleSort(arr) {
   for (let i = arr.length; i > 0; i--) {
     for (let j = 0; j < i - 1; j++) {
