@@ -100,11 +100,12 @@ function bubbleSort(arr) {
         arr[j + 1] = temp;
       }
     }
+    console.log('ONE PASS COMPLETE!');
   }
   return arr;
 }
 
-bubbleSort([37, 45, 29, 8]);
+bubbleSort([37, 45, 29, 8, 15, 77, 100]);
 // [8, 29, 37, 45] 37 45
 // [37, 45, 29, 8] 45 29
 // [37, 29, 45, 8] 45 8
@@ -134,6 +135,7 @@ function bubbleSort(arr) {
         arr[j + 1] = temp;
       }
     }
+    console.log('ONE PASS COMPLETE!');
   }
   return arr;
 }
