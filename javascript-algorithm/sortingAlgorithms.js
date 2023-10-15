@@ -151,7 +151,47 @@ function bubbleSort(arr) {
   return arr;
 }
 
-//* 최적화 버블 정렬
+bubbleSort([8, 1, 2, 3, 4, 5, 6, 7]);
+// 완전히 정렬되어도 계속 비교하는 비효율성이 존재
+//  [8, 1, 2, 3, 4, 5, 6, 7] 8 1
+//  [1, 8, 2, 3, 4, 5, 6, 7] 8 2
+//  [1, 2, 8, 3, 4, 5, 6, 7] 8 3
+//  [1, 2, 3, 8, 4, 5, 6, 7] 8 4
+//  [1, 2, 3, 4, 8, 5, 6, 7] 8 5
+//  [1, 2, 3, 4, 5, 8, 6, 7] 8 6
+//  [1, 2, 3, 4, 5, 6, 8, 7] 8 7
+//  ONE PASS COMPLETE!
+//  [1, 2, 3, 4, 5, 6, 7, 8] 1 2
+//  [1, 2, 3, 4, 5, 6, 7, 8] 2 3
+//  [1, 2, 3, 4, 5, 6, 7, 8] 3 4
+//  [1, 2, 3, 4, 5, 6, 7, 8] 4 5
+//  [1, 2, 3, 4, 5, 6, 7, 8] 5 6
+//  [1, 2, 3, 4, 5, 6, 7, 8] 6 7
+//  ONE PASS COMPLETE!
+//  [1, 2, 3, 4, 5, 6, 7, 8] 1 2
+//  [1, 2, 3, 4, 5, 6, 7, 8] 2 3
+//  [1, 2, 3, 4, 5, 6, 7, 8] 3 4
+//  [1, 2, 3, 4, 5, 6, 7, 8] 4 5
+//  [1, 2, 3, 4, 5, 6, 7, 8] 5 6
+//  ONE PASS COMPLETE!
+//  [1, 2, 3, 4, 5, 6, 7, 8] 1 2
+//  [1, 2, 3, 4, 5, 6, 7, 8] 2 3
+//  [1, 2, 3, 4, 5, 6, 7, 8] 3 4
+//  [1, 2, 3, 4, 5, 6, 7, 8] 4 5
+//  ONE PASS COMPLETE!
+//  [1, 2, 3, 4, 5, 6, 7, 8] 1 2
+//  [1, 2, 3, 4, 5, 6, 7, 8] 2 3
+//  [1, 2, 3, 4, 5, 6, 7, 8] 3 4
+//  ONE PASS COMPLETE!
+//  [1, 2, 3, 4, 5, 6, 7, 8] 1 2
+//  [1, 2, 3, 4, 5, 6, 7, 8] 2 3
+//  ONE PASS COMPLETE!
+//  [1, 2, 3, 4, 5, 6, 7, 8] 1 2
+//  ONE PASS COMPLETE!
+
+//* 반복이 없는 최적화 버블정렬 (Optimized with noSwaps)
+// 불필요한 반복을 줄임
+// 빅오 O(n)
 function bubbleSort(arr) {
   let noSwaps;
   for (let i = arr.length; i > 0; i--) {
@@ -171,3 +211,47 @@ function bubbleSort(arr) {
   }
   return arr;
 }
+
+// [8, 1, 2, 3, 4, 5, 6, 7] 8 1
+// [1, 8, 2, 3, 4, 5, 6, 7] 8 2
+// [1, 2, 8, 3, 4, 5, 6, 7] 8 3
+// [1, 2, 3, 8, 4, 5, 6, 7] 8 4
+// [1, 2, 3, 4, 8, 5, 6, 7] 8 5
+// [1, 2, 3, 4, 5, 8, 6, 7] 8 6
+// [1, 2, 3, 4, 5, 6, 8, 7] 8 7
+// ONE PASS COMPLETE!
+// [1, 2, 3, 4, 5, 6, 7, 8] 1 2
+// [1, 2, 3, 4, 5, 6, 7, 8] 2 3
+// [1, 2, 3, 4, 5, 6, 7, 8] 3 4
+// [1, 2, 3, 4, 5, 6, 7, 8] 4 5
+// [1, 2, 3, 4, 5, 6, 7, 8] 5 6
+// [1, 2, 3, 4, 5, 6, 7, 8] 6 7
+// ONE PASS COMPLETE!
+
+///////////////////////////////////
+//? 선택 정렬 (Selection Sort)
+
+// Similar to bubble sort, but instead of first placing large values into
+// sorted position, it places small values into sorted position.
+// 큰 값을 배열 끝에 위치시키는 대신 작은 값을 한 번에 하나씩 위치에 배열하는 것이다.
+
+// *로 표시한 곳이 최소값
+// [5, 3, 4, 1, 2]
+//  ^  ^
+// [5, *3, 4, 1, 2]
+//  ^      ^
+// [5, *3, 4, 1, 2]
+//  ^         ^
+// [5, 3, 4, *1, 2]
+//  ^           ^
+// [1, 3, 4, 5, 2]
+
+// "https://visualgo.net/en/sorting?slide=1" 에서 확인할 수 있다.
+
+// Selection Sort Pseudocode
+// 1. Store the first element as the smallest value you've seen so far.
+// 2. Compare this item to the next item in the array until you find a smaller number.
+// 3. If a smaller number is found, designate that smaller number to
+// be the new "minimum" and continue until the end of the array.
+// 4. If the "minimum" is not the value (index) you initially began with, swap the tow values.
+// 5. Repeat this with the next element until the array is sorted.
