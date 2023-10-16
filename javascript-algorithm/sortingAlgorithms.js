@@ -243,7 +243,7 @@ function bubbleSort(arr) {
 // [5, *3, 4, 1, 2]
 //  ^         ^
 // [5, 3, 4, *1, 2]
-//  ^           ^
+//  ^            ^
 // [1, 3, 4, 5, 2]
 
 // "https://visualgo.net/en/sorting?slide=1" 에서 확인할 수 있다.
@@ -255,3 +255,32 @@ function bubbleSort(arr) {
 // be the new "minimum" and continue until the end of the array.
 // 4. If the "minimum" is not the value (index) you initially began with, swap the tow values.
 // 5. Repeat this with the next element until the array is sorted.
+
+function selectionSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let lowest = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[lowest]) {
+        lowest = j;
+      }
+    }
+    console.log('*********************');
+    console.log(arr);
+    console.log('SWAPPING TO: ');
+    if (i !== lowest) {
+      let temp = arr[i];
+      arr[i] = arr[lowest];
+      arr[lowest] = temp;
+    }
+    console.log(arr);
+    console.log('*********************');
+  }
+  return arr;
+}
+
+selectionSort([34, 22, 10, 19, 17]);
+// i, j, lowest
+// 0, 1, 1
+// 0, 2, 2
+// 0, 3, 2
+// 0, 4, 2
