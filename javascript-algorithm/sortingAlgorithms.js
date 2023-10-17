@@ -302,3 +302,34 @@ function selectionSort(arr) {
 
   return arr;
 }
+
+// 선택 정렬이 버를 정렬보다 좋은 경우는 "스왑 수"를 최소화하는 경우라면 선택정렬이 낫다.
+
+//////////////////////////////////////////////////
+//? 삽입정렬 (Insertion Sort)
+
+// Builds up the sort by gradually creating
+// a larger left half which is always sorted.
+// 이 정렬은 배열의 과반을 점차적으로 만들어 정렬을 구축하며,
+// 과반은 항상 정렬되어 있습니다.
+
+// [5, 3, 4, 1, 2]
+// [3, 5, 4, 1, 2]
+// [3, 4, 5, 1, 2]
+// [1, 3, 4, 5, 2]
+// [1, 2, 3, 4, 5]
+
+// "https://visualgo.net/en/sorting?slide=1"에서 확인할 수 있다.
+
+// Insertion Sort Pseudocode
+// 1. Start by picking the second element in the array.
+// 2. Now Compare the second element with the one before it and swap if necessary.
+// 3. Continue to the next element and if it is in the incorrect order,
+// iterate through the sorted portion (i.e. the left side) to place the element in the correct place.
+
+function insertionSort(arr) {
+  return arr;
+}
+
+insertionSort([2, 1, 9, 76, 4]);
+[1, 2, 9, 76, 4];
