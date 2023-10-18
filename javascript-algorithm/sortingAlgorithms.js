@@ -327,9 +327,24 @@ function selectionSort(arr) {
 // 3. Continue to the next element and if it is in the incorrect order,
 // iterate through the sorted portion (i.e. the left side) to place the element in the correct place.
 
+//! let 사용시 에러가 발생 (향후 이유 발견 필요)
 function insertionSort(arr) {
+  for (var i = 1; i < arr.length; i++) {
+    let currentVal = arr[i];
+    for (var j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+      console.log('be j', j);
+      console.log('arr[j]', arr[j]);
+      arr[j + 1] = arr[j];
+      console.log(arr);
+    }
+    console.log('af j', j);
+    console.log('currentVal', currentVal);
+    arr[j + 1] = currentVal;
+    console.log(arr);
+  }
   return arr;
 }
 
 insertionSort([2, 1, 9, 76, 4]);
-[1, 2, 9, 76, 4];
+insertionSort([5, 3, 4, 1, 2]);
+// [1, 2, 9, 76, 4];
