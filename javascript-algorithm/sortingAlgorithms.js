@@ -348,3 +348,14 @@ function insertionSort(arr) {
 insertionSort([2, 1, 9, 76, 4]);
 insertionSort([5, 3, 4, 1, 2]);
 // [1, 2, 9, 76, 4];
+
+//? 버블, 선택, 삽입 정렬 비교
+// 유데미 강의 82 표 참고
+// https://www.toptal.com/developers/sorting-algorithms
+// 상기 사이트로 각 상황별 알고리즘의 복잡도를 비교할 수 있음.
+
+// Recap(중요 내용 요약)
+// Sorting is fundamental!
+// Bubble sort, selection sort, and insertion sort are all roughly equivalent.
+// All have average time complexities that are quadratic.
+// We can do better... but we need more complex algorithms!
