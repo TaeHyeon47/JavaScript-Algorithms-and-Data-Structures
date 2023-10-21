@@ -28,3 +28,9 @@
 // [3, 8] [4, 5] [6, 7] [1, 2] - merge
 // [3, 4, 5, 8] [1, 2, 6, 7] - merge
 // [1, 2, 3, 4, 5, 6, 7, 8]
+
+////////////////////////////////
+//? 배열 합병 소개 (Merging Arrays)
+// ● In order to implement merge sort, it's useful to first implement a function responsible for merging two sorted arrays.
+// ● Given two arrays which are sorted, this helper function should create a new array which is also sorted, and consists of all of the elements in the tow input arrays.
+// ● This function should run in O(n+m) time and O(n + m) space and should not modify the parameters passed to it.
