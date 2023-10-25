@@ -90,6 +90,6 @@ mergeSort([10, 24, 76, 73, 72, 1, 9]);
 mergeSort([10, 24, 76, 73]);
 
 //? 합병 정렬 빅오 (Big O of Merge Sort)
-// 강의 90 설명 참조
-// Big-O Complexity Chart 비교 사이트
-// https://www.bigocheatsheet.com/
+// ● 강의 90 설명 참조
+// ● Big-O Complexity Chart 비교 사이트
+// ● https://www.bigocheatsheet.com/
