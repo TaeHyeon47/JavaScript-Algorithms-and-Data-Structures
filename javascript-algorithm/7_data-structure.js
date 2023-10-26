@@ -28,3 +28,91 @@
 
 // There is a ton of content to take in here...
 // don't get overwhelmed trying to master it all at once.
+
+/////////////////////////////
+// ES2015 Class 구문 정리
+// ● 자료구조 학습을 위해 ES2015 Class 구문을 정리
+
+// Objectives
+// ● Explain what a class is
+// ● Understand how javascript implements the idea of classes
+// ● Define terms like abstraction, encapsulation, and polymorphism
+// ● Use ES2015 classes to implement data structures
+
+// What is a class?
+// ● A blueprint for creating objects with pre-defined properties and methods
+// Does Javascript really have them? Ehh... not really
+// 자바스크립트에서 클래스는 프로토타입 기반 상속자들을 구문적으로 눈속임하여 구현한 것.
+
+// The Syntax
+class Student {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+}
+// ● The method to create new objects must be called constructor
+// ● The class keyword created a constant, so you can not redefine it. Watch out for the syntax as well!
+// 또는 '인스턴스 메소드' 내부에서 사용되는 this는
+
+// Creating objects from classes
+// ● We use the new keyword
+let firstStudent = new Student('Colt', 'Steele');
+let secondStudent = new Student('Blue', 'Steele');
+
+// ● 'constructor' 내부의 this는 Student 개별 클래스 인스턴스를 지칭. 즉, firstStudent, secondStudent 지칭
+
+// Instance Methods (인스턴스 메소드!)
+
+// The Syntax
+class Student {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  fullName() {
+    return `Your full name is ${this.firstName} ${this.lastName}`;
+  }
+}
+
+let firstStudent3 = new Student('Colt', 'Steele');
+
+firstStudent.fullName(); // "Colt Steele"
+
+// ● 인스턴스를 생성하지 않으면 메소드를 실행할 수 없다.
+// ● 'this'는 개별 인스턴스에만 적용된다.
+
+class Student {
+  constructor(firstName, lastName, year) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.grade = year;
+    this.tardies = 0;
+    this.scores = [];
+  }
+  fullName() {
+    return `Your full name is ${this.firstName} ${this.lastName}`;
+  }
+  markLate() {
+    this.tardies += 1;
+    if (this.tardies >= 3) {
+      return 'YOU ARE EXPELLED!!!!';
+    }
+    return `${this.firstName} ${this.lastName} has been late ${this.tardies} times`;
+  }
+  addScore(score) {
+    this.scores.push(score);
+    return this.scores;
+  }
+  calculateAverage() {
+    let sum = this.scores.reduce(function (a, b) {
+      return a + b;
+    });
+    return sum / this.scores.length;
+  }
+}
+
+let firstStudent2 = new Student('Colt', 'Steele', 1);
+let secondStudent2 = new Student('Blue', 'Steele', 2);
+
+secondStudent2.addScore(92);
