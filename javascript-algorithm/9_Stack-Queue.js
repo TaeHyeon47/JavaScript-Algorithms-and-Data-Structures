@@ -16,6 +16,13 @@
 
 // 강의 151 사진 참조
 
+// Where stacks are used
+// ● Managing function invocations
+// ● Undo / Redo
+// ● Routing (the history object) is treated like a stack!
+
+// There is more than one way of implementing a stack
+
 class Node {
   constructor(value) {
     this.value = value;
