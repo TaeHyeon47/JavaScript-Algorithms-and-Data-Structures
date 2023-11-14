@@ -46,8 +46,23 @@ stack.shift(); // cloned out wrinkle
 stack.shift(); // resized file
 stack.shift(); // create new file
 
-// 배열의 재배치 관점에서 본다면 unshift보다 push를 사용하는 것이 낫다.
-// 코드의 효율성을 보았을 때 배열을 스택으로 이용하지 않는 경우가 더 많다.
+// ● 배열의 재배치 관점에서 본다면 unshift보다 push를 사용하는 것이 낫다.
+// ● 코드의 효율성을 보았을 때 배열을 스택으로 이용하지 않는 경우가 더 많다.
+
+//? Class를 사용한 스택 만들기
+// ● 이전에 배운 '단일 연결 리스트'는 상수값(constant) 시간(time)을 가지지 않는다.
+// ● 왜냐하면 리스트의 맨 뒤에서 무언가를 제거하는 것은 리스트의 특성 때문에 전체 리스트를 순회해서 바로 끝 앞에서 멈춰야하기 때문이다.
+// ● 그러면 전체 리스트에 루프를 걸어야하니 constant time이 아니게 된다.
+//* ● 따라서 shift와 unshift를 사용하는 것이 낫다. 아래는 push와 pop으로 정의했지만 unshift와 shift의 로직이다.
+
+// Pushing pseudocode
+// ● The function should accept a value
+// ● Create a new node with that value
+// ● If there are no nodes in the stack, set the first and last property to be the newly created node.
+// ● If there is at least one node, create a variable that stores the current first property on the stack
+// ● Reset the first property to be the newly created node
+// ● Set the next property on the node to be the previously created variable
+// ● Increment the size of the stack by 1
 
 class Node {
   constructor(value) {
