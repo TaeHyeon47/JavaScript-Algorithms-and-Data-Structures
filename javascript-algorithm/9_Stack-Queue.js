@@ -100,3 +100,22 @@ class Stack {
     return temp.value;
   }
 }
+
+//? 큐 (Queues)
+
+// Objectives
+// ● Define what a queue is
+// ● Understand use cases for a queue
+// ● Implement operations on a queue data structure
+
+// What is a queue? (선입선출)
+// ● A FIFO data structure!
+// ● First in first out
+
+// We've seen this before
+// ● Queues exist everywhere! Think about the last time you waited in line...
+// ● How do we use them in programming?
+// ● 게임 접속 대기
+// ● Background tasks
+// ● Uploading resources
+// ● Printing / Task processing
