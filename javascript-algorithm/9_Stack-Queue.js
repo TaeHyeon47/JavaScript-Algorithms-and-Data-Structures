@@ -119,3 +119,24 @@ class Stack {
 // ● Background tasks
 // ● Uploading resources
 // ● Printing / Task processing
+
+//? 배열을 사용해서 큐 만들기
+var q = [];
+q.push('FIRST');
+q.push('SECOND');
+q.push('THIRD');
+q; // ["FIRST", "SECOND", "THIRD"]
+q.shift(); // "FIRST"
+q.shift(); // "SECOND"
+q.shift(); // "THIRD"
+// ● 맨 앞의 요소를 가져오는 것은 나머지 배열을 모두 변경하기 때문에 비효율적이다.
+
+q.unshift('FIRST');
+q.unshift('SECOND');
+q.unshift('THIRD');
+// ● 배열이 재배치되면서 비효율적이다.
+q.pop();
+q.pop();
+q.pop();
+
+// 성능을 신경써야는 경우라면 직접 큐 클래스를 만드는 것이 좋다.
