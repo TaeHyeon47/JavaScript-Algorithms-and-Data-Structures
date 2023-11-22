@@ -19,3 +19,12 @@
 //* ● Siblings - A group of nodes with the same parent.
 //* ● Leaf - A node with no children.
 //* ● Edge - The connection between one node and another.
+
+//? 트리(Tree)의 사용처
+// Lots of different applications!
+// ● HTML DOM
+// ● Network Routing
+// ● Abstract Syntax Tree
+// ● Artificial Intelligence
+// ● Folders in Operating Systems
+// ● Computer File Systems
