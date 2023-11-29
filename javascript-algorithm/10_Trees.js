@@ -29,7 +29,18 @@
 // ● Folders in Operating Systems
 // ● Computer File Systems
 
-//? 트리 클래스
+//? 이진(Binary) 트리(Tree)의 개념
+// ● 트리에도 다양한 종류가 있다
+// ● 한 노드당 최대 2개의 자식 노드를 가질 수 있다. 즉, 0, 1, 2개의 자식을 가진다.
+// ● 이진(Binary) 검색(Search) 트리(Tree)는 데이터를 비교해서 정렬 가능하게 한다.
+
+// How BSTs work
+// ● Every parent node has at most two children
+// ● Every node to the left of a parent node is always less than the parent
+// ● Every node to the right of a parent node is always greater than the parent
+// ● 이진 탐색 트리에서 무언가를 찾는 것은 정렬되지 않은 트리와 비교하면 아주 빠르다.
+
+//? 이진 검색 트리 클래스
 class Node {
   constructor(value) {
     this.value = value;
@@ -49,16 +60,6 @@ tree.root = new Node(10);
 tree.root.right = new Node(15);
 tree.root.left = new Node(7);
 tree.root.left.right = new Node(9);
-
-//? 이진(Binary) 트리(Tree)의 개념
-// ● 트리에도 다양한 종류가 있다
-// ● 한 노드당 최대 2개의 자식 노드를 가질 수 있다. 즉, 0, 1, 2개의 자식을 가진다.
-// ● 이진(Binary) 검색(Search) 트리(Tree)는 데이터를 비교해서 정렬 가능하게 한다.
-
-// How BSTs work
-// ● Every parent node has at most two children
-// ● Every node to the left of a parent node is always less than the parent
-// ● Every node to the right of a parent node is always greater than the parent
 
 //? 이진(Binary) 트리(Tree) Insert 메소드
 
@@ -97,6 +98,22 @@ class BinarySearchTree {
         current = current.right;
       }
     }
+  }
+  find(value) {
+    if (this.root === null) return false;
+    var current = this.root,
+      found = false;
+    while (current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right;
+      } else {
+        found = true;
+      }
+    }
+    if (!found) return undefined;
+    return current;
   }
 }
 
