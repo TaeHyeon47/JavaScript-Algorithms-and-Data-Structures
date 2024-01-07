@@ -5,7 +5,7 @@ class Node {
     this.right = null;
   }
 }
-
+// git 에러 테스트
 class BinarySearchTree {
   constructor() {
     this.root = null;
